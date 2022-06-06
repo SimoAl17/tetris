@@ -767,34 +767,34 @@ function rotate() {
         }
                 break;
 
-            case 6:          //Z-Shape
-            for (const spr of sprites) {
+            case 6:          //Z-Shape         12      <--Sprites order
+            for (const spr of sprites) {//      34
             if (spr.moving === true) {      
                 if (spr.order === 1) {      
                     switch (direc) {        //Rotate the moving sprites depending the direction and which sprite is rotating (memorize the previous coordinates)
                         case 1:
                             tx1 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x + 50;
                             ty1 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y;
                             break;
                         case 2:
                             tx2 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x + 50;
                             ty2 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y + 50;
                             break;
                         case 3:
                             tx3 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x - 100;
                             ty3 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y + 50;
                             break;
                         case 4:
                             tx4 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x;
                             ty4 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y - 100;
                             break;
                         default:
                             break;
@@ -804,27 +804,27 @@ function rotate() {
                     switch (direc) {        
                         case 1:
                             tx1 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x;
                             ty1 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y + 50;
                             break;
                         case 2:
                             tx2 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x;
                             ty2 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y;
                             break;
                         case 3:
                             tx3 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x - 50;
                             ty3 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y;
                             break;
                         case 4:
                             tx4 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x + 50;
                             ty4 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y - 50;
                             break;
                         default:
                             break;
@@ -834,27 +834,27 @@ function rotate() {
                     switch (direc) {        
                         case 1:
                             tx1 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x - 50;
                             ty1 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y;
                             break;
                         case 2:
                             tx2 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x + 50;
                             ty2 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y - 50;
                             break;
                         case 3:
                             tx3 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x;
                             ty3 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y + 50;
                             break;
                         case 4:
                             tx4 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x;
                             ty4 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y;
                             break;
                         default:
                             break;
@@ -864,27 +864,27 @@ function rotate() {
                     switch (direc) {        
                         case 1:
                             tx1 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x - 100;
                             ty1 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y + 50;
                             break;
                         case 2:
                             tx2 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x;
                             ty2 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y - 100;
                             break;
                         case 3:
                             tx3 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x + 50;
                             ty3 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y;
                             break;
                         case 4:
                             tx4 = spr.x;
-                            spr.x =;
+                            spr.x = spr.x + 50;
                             ty4 = spr.y;
-                            spr.y =;
+                            spr.y = spr.y + 50;
                             break;
                         default:
                             break;
@@ -903,5 +903,10 @@ function rotate() {
                 }
             }
                 break;
+        }
+        if (direc === 4) {
+            direc = 1;
+        } else {
+            direc++;
         }
 }
